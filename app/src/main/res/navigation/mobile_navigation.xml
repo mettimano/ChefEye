@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.ChefEye.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_voice_search"
+        android:name="com.example.ChefEye.ui.voice_search.VoiceSearchFragment"
+        android:label="@string/title_voice_search"
+        tools:layout="@layout/fragment_voice_search" >
+        <argument
+            android:name="plate"
+            app:argType="string"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_image_search"
+        android:name="com.example.ChefEye.ui.image_search.ic_cameraFragment"
+        android:label="@string/title_image_search"
+        tools:layout="@layout/fragment_ic_camera" >
+        <action
+            android:id="@+id/action_navigation_image_search_to_navigation_voice_search"
+            app:destination="@id/navigation_voice_search" />
+    </fragment>
+</navigation>
